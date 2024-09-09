@@ -2,9 +2,17 @@
 > Cada um possui uma breve descrição sobre sua função e como executa-lo em sua máquina. 
 > Espero que goste 😊
 
+## Summary
+- [Projeto 1: DoS Blocker](#projeto-1-dos-blocker)
+- [Projeto 2: Mini Firewall](#projeto-2-mini-firewall)
+- [Projeto 3: Simulation](#projeto-3-simulation)
+- [Projeto 4: OS Fingerprinting](#projeto-4-os-fingerprinting)
+- [Projeto 5: Ping Sweeper](#projeto-5-ping-sweeper)
+- [Projeto 6: Port Scanner](#projeto-6-port-scanner)
+- [Projeto 7: Service Fingerprinting](#projeto-7-service-fingerprinting)
 
 ## `Projeto 1: DoS Blocker`
-
+**[Veja o código](https://github.com/mariarithanascimento/PySec-Automations-Portuguese/blob/54f77727b1c4c157bb404ef7831c171340d8281c/firewalls/DoS_Blocker.py)**
 ### Descrição:
 O **DoS Blocker** monitora o tráfego da rede para identificar e bloquear ataques de negação de serviço (DoS). Ele analisa a taxa de pacotes de IPs específicos e, se a taxa ultrapassar um limite definido (40 pacotes por segundo), o IP é bloqueado utilizando o `iptables`.
 
@@ -31,7 +39,7 @@ O **DoS Blocker** monitora o tráfego da rede para identificar e bloquear ataque
 
 
 ## `Projeto 2: Mini Firewall`
-
+**[Veja o código](https://github.com/mariarithanascimento/PySec-Automations-Portuguese/blob/54f77727b1c4c157bb404ef7831c171340d8281c/firewalls/Mini_Firewall.py)**
 ### Descrição:
 O **Mini Firewall** é um firewall simples que bloqueia IPs com base em listas de permissões (whitelist) e bloqueios (blacklist). Ele também detecta o worm Nimda e bloqueia IPs maliciosos. Registra eventos de bloqueio em arquivos de log.
 
@@ -62,7 +70,7 @@ O **Mini Firewall** é um firewall simples que bloqueia IPs com base em listas d
 
 
 ## `Projeto 3: Simulation`
-
+**[Veja o código](https://github.com/mariarithanascimento/PySec-Automations-Portuguese/blob/54f77727b1c4c157bb404ef7831c171340d8281c/firewalls/Simulation.py)**
 ### Descrição:
 O **Simulation** é uma simulação de firewall simples que gera endereços IP aleatórios e verifica se eles correspondem às regras predefinidas de bloqueio. Se o IP estiver na lista de bloqueio, a ação será "block"; caso contrário, a ação será "allow". 
 
@@ -84,7 +92,7 @@ O **Simulation** é uma simulação de firewall simples que gera endereços IP a
 
 
 ## `Projeto 4: OS Fingerprinting`
-
+**[Veja o código](https://github.com/mariarithanascimento/PySec-Automations-Portuguese/blob/54f77727b1c4c157bb404ef7831c171340d8281c/scanners/OS_Fingerprinting.py)**
 ### Descrição:
 O **OS Fingerprinting** realiza a varredura de um host para identificar o sistema operacional e os serviços associados aos diferentes protocolos e portas. Utiliza a biblioteca `nmap` para fazer a varredura e exporta os resultados para um arquivo CSV.
 
@@ -109,7 +117,7 @@ O **OS Fingerprinting** realiza a varredura de um host para identificar o sistem
 
 
 ## `Projeto 5: Ping Sweeper`
-
+**[Veja o código](https://github.com/mariarithanascimento/PySec-Automations-Portuguese/blob/54f77727b1c4c157bb404ef7831c171340d8281c/scanners/Ping_Sweeper.py)**
 ### Descrição:
 O **Ping Sweeper** realiza uma varredura de ping em uma rede para identificar hosts que estão online. Ele utiliza o protocolo ICMP para enviar pacotes e verificar se os hosts respondem.
 
@@ -135,7 +143,7 @@ O **Ping Sweeper** realiza uma varredura de ping em uma rede para identificar ho
 
 
 ## `Projeto 6: Port Scanner`
-
+**[Veja o código](https://github.com/mariarithanascimento/PySec-Automations-Portuguese/blob/54f77727b1c4c157bb404ef7831c171340d8281c/scanners/Port_Scanner.py)**
 ### Descrição:
 O **Port Scanner** varre uma rede para identificar hosts ativos e verifica as portas abertas em cada host. Utiliza `scapy` para enviar pacotes TCP e realiza a varredura de portas de maneira paralela.
 
@@ -164,7 +172,7 @@ O **Port Scanner** varre uma rede para identificar hosts ativos e verifica as po
 
 
 ## `Projeto 7: Service Fingerprinting`
-
+**[Veja o código](https://github.com/mariarithanascimento/PySec-Automations-Portuguese/blob/54f77727b1c4c157bb404ef7831c171340d8281c/scanners/Service_Fingerprinting.py)**
 ### Descrição:
 O **Service Fingerprinting** realiza uma varredura para identificar banners de serviços que estão rodando em portas específicas de um host. Ele tenta se conectar a um serviço e retorna o banner da aplicação, útil para detectar versões de software.
 
