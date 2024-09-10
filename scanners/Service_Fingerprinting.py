@@ -14,7 +14,7 @@ def get_service_banner(ip, port):
         return banner.decode('utf-8', errors='ignore')
     except Exception:
         return None
-    
+
 def main():
     parser = argparse.ArgumentParser(description='Service Banner Scanner')
     parser.add_argument('ip', help='IP address to scan')
@@ -22,17 +22,17 @@ def main():
 
     args = parser.parse_args()
 
-    ip =args.ip
+    ip = args.ip
     ports = [port.strip() for port in args.ports.split(',')]
 
     print(f"Scanning IP: {ip}")
     for port in ports:
         print(f"Scanning port {port} on IP {ip}")
-        banner = get_service_banner(ip,port)
+        banner = get_service_banner(ip, port)
         if banner:
             print(f"Service banner for port {port} on IP {ip}:\n{banner}\n")
         else:
             print(f"No service banner found for port {port} on IP {ip}\n")
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()

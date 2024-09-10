@@ -12,18 +12,17 @@ def scan_host(ip, ports):
     for proto in nm[ip].all_protocols():
         lport = nm[ip][proto].keys()
         for port in lport:
-            for port in lport:
-                host_infos = {
-                    'ip': ip,
-                    'os': nm[ip].get('osclass', {}).get('osfamily', 'Unknown'),
-                    'port': port,
-                    'name': nm[ip][proto][port]['name'],
-                    'product': nm[ip][proto][port]['product'],
-                    'version': nm[ip][proto][port]['version'],
-                }
-                host_infos.append(host_infos)
+            host_info = {
+                'ip': ip,
+                'os': nm[ip].get('osclass', {}).get('osfamily', 'Unknown'),
+                'port': port,
+                'name': nm[ip][proto][port]['name'],
+                'product': nm[ip][proto][port]['product'],
+                'version': nm[ip][proto][port]['version'],
+            }
+            host_infos.append(host_info)
 
-        return host_infos
+    return host_infos
 
 def output_to_csv(output_file, host_info):
     fieldnames = ["ip", "os", "port", "name", "product", "version"]
@@ -39,8 +38,8 @@ def main():
     parser = argparse.ArgumentParser(description="Scan a single host for open ports and services")
     parser.add_argument("host", help="The target host IP address")
     parser.add_argument("-p", "--ports", help="Ports to scan", type=str, required=True)
-    parser.add_argument("-o","--output", help="The output file", default="scan_results.csv")
-    args = parser.parse_args
+    parser.add_argument("-o", "--output", help="The output file", default="scan_results.csv")
+    args = parser.parse_args()
 
     ip = args.host
     ports = args.ports
@@ -49,11 +48,11 @@ def main():
     print(f"Scanning IP: {ip}")
     print(f"Scanning ports: {ports}")
 
-    sys.stdout.write("Scanning")
+    sys.stdout.write("Scanning ")
     sys.stdout.flush()
 
     host_infos = scan_host(ip, ports)
-
+    
     for host_info in host_infos:
         output_to_csv(output_file, host_info)
 
@@ -66,5 +65,5 @@ def main():
         print(f"Product: {host_info['product']}")
         print(f"Version: {host_info['version']}\n")
 
-    if __name__ == "__main__":
-        main()
+if __name__ == "__main__":
+    main()
