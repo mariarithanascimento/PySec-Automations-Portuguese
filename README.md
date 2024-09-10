@@ -26,8 +26,9 @@ O **DoS Blocker** monitora o tráfego da rede para identificar e bloquear ataque
     ```bash
     sudo python3 dos_blocker.py
     ```
+   **Ou edite e execute o [DoS Blocker Tester](https://github.com/mariarithanascimento/PySec-Automations-Portuguese/blob/2deee6f49dcf484a1837fcaf9ec3d0d238e7e0f9/testers/DoS_Blocker_Tester.py)**
 
-3. O script começará a monitorar o tráfego da rede. Quando um IP enviar pacotes além do limite, ele será bloqueado.
+4. O script começará a monitorar o tráfego da rede. Quando um IP enviar pacotes além do limite, ele será bloqueado.
 
 ### Dependências:
 - `scapy` (biblioteca para captura de pacotes de rede)
@@ -55,6 +56,7 @@ O **Mini Firewall** é um firewall simples que bloqueia IPs com base em listas d
     ```bash
     sudo python3 mini_firewall.py
     ```
+    **Ou edite e execute o [Nimda Packet](https://github.com/mariarithanascimento/PySec-Automations-Portuguese/blob/2deee6f49dcf484a1837fcaf9ec3d0d238e7e0f9/testers/Nimda_Packet.py)**
 
 4. O firewall começa a monitorar o tráfego da rede, bloqueando IPs maliciosos e registrando os eventos no diretório `logs`.
 
